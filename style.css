@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #1e1e2f;
+  --accent-color: #f89e13;
+  --secondary-color: #18ba89;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ededed;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  margin: 30px 0;
+}
+
+.guess-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px auto;
+  width: clamp(350px, 90%, 1200px);
+  flex-wrap: wrap;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgb(0, 0, 0, 0.25);
+}
+/* Game Area - Section */
+.game-area {
+  flex: 1;
+  max-width: 600px;
+}
+
+.inputs div {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs span {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+input {
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  text-align: center;
+  border: 2px solid var(--dark-color);
+  border-radius: 10px;
+  margin-right: 8px;
+  caret-color: var(--accent-color);
+  transition: all 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+input.yes-in-place {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+input.not-in-place {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+input.no {
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+  color: white;
+}
+
+.message {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+.message span {
+  color: var(--accent-color);
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 30px auto;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  font-size: 22px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.check {
+  background-color: var(--accent-color);
+  flex: 1;
+}
+
+.hint {
+  background-color: var(--secondary-color);
+  width: fit-content;
+}
+
+button:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background-color: black;
+  opacity: 0.5;
+  cursor: no-drop;
+}
+.hidden-input {
+  opacity: 0.5;
+  cursor: no-drop;
+}
+/* Key-Section */
+.key-colors {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.imge-Guess {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.key-color {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.key {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.key.in-place {
+  background-color: var(--accent-color);
+}
+.key.not-in-place {
+  background-color: var(--secondary-color);
+}
+.key.no {
+  background-color: var(--dark-color);
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--dark-color);
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+}
+footer span {
+  color: var(--accent-color);
+  font-size: larger;
+}
+@media (max-width: 900px) {
+  .guess-game {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .control {
+    flex-direction: column;
+  }
+
+  .control button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .imge-Guess {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  .guess-game {
+    padding: 15px;
+  }
+  footer {
+    border-radius: 1px;
+  }
+}
+@media (max-width: 480px) {
+  input {
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+  }
+
+  .control button {
+    font-size: 18px;
+    padding: 12px 18px;
+  }
+}
